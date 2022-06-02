@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureSensor", "TemperatureSensor\TemperatureSensor.csproj", "{AAB194B8-D919-4D3B-849E-1363880E05DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureSensor.WebApi", "TemperatureSensor.WebApi\TemperatureSensor.WebApi.csproj", "{0EF43F9E-803F-4578-9D74-A99F653FD037}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AAB194B8-D919-4D3B-849E-1363880E05DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAB194B8-D919-4D3B-849E-1363880E05DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAB194B8-D919-4D3B-849E-1363880E05DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF43F9E-803F-4578-9D74-A99F653FD037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF43F9E-803F-4578-9D74-A99F653FD037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF43F9E-803F-4578-9D74-A99F653FD037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF43F9E-803F-4578-9D74-A99F653FD037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
