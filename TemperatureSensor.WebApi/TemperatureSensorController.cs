@@ -3,7 +3,7 @@
 namespace TemperatureSensor.WebApi
 {
     [ApiController]
-    [Route("TemperatureSensor")]
+    [Route("TemperatureSensors")]
     public class TemperatureSensorController : ControllerBase
     {
         [HttpPost("")]
