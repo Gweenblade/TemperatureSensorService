@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TemperatureSensor.Models.Requests;
 
 namespace TemperatureSensor.WebApi
 {
@@ -6,32 +7,32 @@ namespace TemperatureSensor.WebApi
     [Route("TemperatureSensors")]
     public class TemperatureSensorController : ControllerBase
     {
-        [HttpPost("")]
-        public async Task<IActionResult> CreateTemperatureSensorAsync()
+        [HttpPost("{SensorId}")]
+        public async Task<IActionResult> CreateTemperatureSensorAsync([FromRoute] CreateTemperatureSensorRequest createTemperatureSensorRequest)
         {
             throw new NotImplementedException();
         }
         
-        [HttpPatch("")]
-        public async Task<IActionResult> UpdateTemperatureSensorAsync()
+        [HttpPatch("{SensorId}")]
+        public async Task<IActionResult> UpdateTemperatureSensorAsync([FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
             throw new NotImplementedException();
         }
 
-        [HttpDelete("")]
-        public async Task<IActionResult> RemoveTemperatureSensorAsync()
+        [HttpDelete("{SensorId}")]
+        public async Task<IActionResult> RemoveTemperatureSensorAsync([FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet("{SensorId}")]
+        public async Task<IActionResult> GetTemperatureSensorAsync([FromRoute] GetTemperatureSensorRequest getTemperatureSensorRequest)
         {
             throw new NotImplementedException();
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> GetTemperatureSensorAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        [HttpGet("1")]
-        public async Task<IActionResult> GetTemperatureSensorsAsync()
+        public async Task<IActionResult> GetTemperatureSensorsAsync([FromRoute] GetTemperatureSensorsRequest getTemperatureSensorsRequest)
         {
             throw new NotImplementedException();
         }

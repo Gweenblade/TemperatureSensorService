@@ -1,7 +1,10 @@
-﻿namespace TemperatureSensor.Models.Requests
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace TemperatureSensor.Models.Requests
 {
     public record GetTemperatureSensorRequest
     {
-        public string SensorName { get; set; }
+        [FromRoute]
+        public string SensorId { get; set; }
     }
 }
