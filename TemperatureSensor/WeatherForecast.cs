@@ -1,4 +1,4 @@
-namespace TemperatureSensorService
+namespace TemperatureSensor
 {
     public class WeatherForecast
     {

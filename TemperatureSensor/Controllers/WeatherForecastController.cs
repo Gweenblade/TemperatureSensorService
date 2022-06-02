@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TemperatureSensorService.Controllers
+namespace TemperatureSensor.Controllers
 {
     [ApiController]
     [Route("[controller]")]
