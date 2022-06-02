@@ -2,5 +2,6 @@
 {
     public record GetTemperatureSensorRequest
     {
+        public string SensorName { get; set; }
     }
 }

@@ -2,5 +2,6 @@
 {
     public record RemoveTemperatureSensorRequest
     {
+        public string SensorName { get; set; }
     }
 }
