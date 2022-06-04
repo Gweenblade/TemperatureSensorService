@@ -25,7 +25,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
-                var response = await _temperatureSensorService.CreateTemperatureSensorAsync(
+                _temperatureSensorService.CreateTemperatureSensorAsync(
                     _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
                 if (response)
                 {
@@ -47,7 +47,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
-                var response = await _temperatureSensorService.UpdateTemperatureSensorAsync(
+                _temperatureSensorService.UpdateTemperatureSensorAsync(
                     _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
                 if (response)
                 {
@@ -69,7 +69,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
-                var response = await _temperatureSensorService.RemoveTemperatureSensorAsync(
+                _temperatureSensorService.RemoveTemperatureSensorAsync(
                     _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
                 if (response)
                 {

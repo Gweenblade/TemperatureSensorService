@@ -11,12 +11,12 @@ namespace TemperatureSensor.Core.Services
         {
             _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
         }
-        public Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
+        public void CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            throw new NotImplementedException();
+            _temperatureSensorRepository.CreateTemperatureSensorAsync(createTemperatureSensorModel);
         }
 
-        public Task<string> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
+        public Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
         {
             throw new NotImplementedException();
         }
@@ -26,19 +26,14 @@ namespace TemperatureSensor.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel)
+        public void RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel)
         {
-            throw new NotImplementedException();
+            _temperatureSensorRepository.RemoveTemperatureSensor(removeTemperatureSensorModel);
         }
 
-        public Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
+        public void UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
         {
-            throw new NotImplementedException();
-        }
-
-        Task<TemperatureSensorDto> ITemperatureSensorService.GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
-        {
-            throw new NotImplementedException();
+            _temperatureSensorRepository.UpdateTemperatureSensorAsync(updateTemperatureSensorModel);
         }
     }
 }
