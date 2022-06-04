@@ -6,9 +6,9 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility
 {
     public class DatabaseUtility
     {
-        public static void ConfigureServices(IServiceCollection services)
+        public static void ConfigureServices(IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<TemperatureSensorContext>(options => options.UseSqlServer(@"Server=localhost;Database=TemperatureSensorsDatabase;Trusted_Connection=True"));
+            services.AddDbContext<TemperatureSensorContext>(options => options.UseSqlServer(connectionString));
         }
     }
 }

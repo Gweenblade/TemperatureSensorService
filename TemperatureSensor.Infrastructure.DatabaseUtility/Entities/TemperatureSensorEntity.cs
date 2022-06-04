@@ -13,6 +13,9 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public string SensorId { get; set; }
         public int Depth { get; set; }
         public int CircleOfLatitude { get; set; }

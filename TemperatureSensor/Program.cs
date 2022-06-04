@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 WebApi.ConfigureServices(builder.Services);
 Core.ConfigureServices(builder.Services);
-DatabaseUtility.ConfigureServices(builder.Services);
+DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["ConnectionStrings:DbConnectionString"]);
 
 var app = builder.Build();
 

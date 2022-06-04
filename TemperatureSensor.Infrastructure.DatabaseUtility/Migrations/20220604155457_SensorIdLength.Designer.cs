@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TemperatureSensor.Infrastructure.DatabaseUtility.DbContexts;
 
@@ -10,9 +11,10 @@ using TemperatureSensor.Infrastructure.DatabaseUtility.DbContexts;
 namespace TemperatureSensor.Infrastructure.DatabaseUtility.Migrations
 {
     [DbContext(typeof(TemperatureSensorContext))]
-    partial class TemperatureSensorContextModelSnapshot : ModelSnapshot
+    [Migration("20220604155457_SensorIdLength")]
+    partial class SensorIdLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
