@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TemperatureSensor.Core.Infrastructure;
+using TemperatureSensor.Core.InternalModels;
 using TemperatureSensor.Models.Requests;
 
 namespace TemperatureSensor.Infrastructure.WebApi
@@ -18,35 +19,115 @@ namespace TemperatureSensor.Infrastructure.WebApi
             _temperatureSensorService = temperatureSensorService ??
                                         throw new ArgumentNullException(nameof(temperatureSensorService));
         }
-         
+
         [HttpPost("{SensorId}")]
         public async Task<IActionResult> CreateTemperatureSensorAsync([FromRoute] CreateTemperatureSensorRequest createTemperatureSensorRequest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _temperatureSensorService.CreateTemperatureSensorAsync(
+                    _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
+                if (response)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return Conflict();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
-        
+
         [HttpPatch("{SensorId}")]
         public async Task<IActionResult> UpdateTemperatureSensorAsync([FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _temperatureSensorService.UpdateTemperatureSensorAsync(
+                    _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
+                if (response)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return Conflict();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         [HttpDelete("{SensorId}")]
         public async Task<IActionResult> RemoveTemperatureSensorAsync([FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _temperatureSensorService.RemoveTemperatureSensorAsync(
+                    _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
+                if (response)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return Conflict();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         [HttpGet("{SensorId}")]
         public async Task<IActionResult> GetTemperatureSensorAsync([FromRoute] GetTemperatureSensorRequest getTemperatureSensorRequest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _temperatureSensorService.GetTemperatureSensorAsync(
+                    _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
+                if (string.IsNullOrEmpty(response))
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NoContent();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         [HttpGet("")]
         public async Task<IActionResult> GetTemperatureSensorsAsync([FromRoute] GetTemperatureSensorsRequest getTemperatureSensorsRequest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await _temperatureSensorService.GetTemperatureSensorAsync(
+                    _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorsRequest));
+                if (string.IsNullOrEmpty(response))
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NoContent();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }
