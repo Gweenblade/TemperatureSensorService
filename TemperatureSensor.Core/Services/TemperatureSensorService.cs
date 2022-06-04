@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TemperatureSensor.Core.Interfaces;
+﻿using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Core.InternalModels;
 
 namespace TemperatureSensor.Core.Services

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Core.Interfaces;
 using TemperatureSensor.Core.Services;
 

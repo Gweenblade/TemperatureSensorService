@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Models.Requests;
 
 namespace TemperatureSensor.WebApi
@@ -9,10 +10,13 @@ namespace TemperatureSensor.WebApi
     public class TemperatureSensorController : ControllerBase
     {
         private readonly IMapper _mapper;
+        private readonly ITemperatureSensorService _temperatureSensorService;
 
-        public TemperatureSensorController(IMapper mapper)
+        public TemperatureSensorController(IMapper mapper, ITemperatureSensorService temperatureSensorService)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _temperatureSensorService = temperatureSensorService ??
+                                        throw new ArgumentNullException(nameof(temperatureSensorService));
         }
          
         [HttpPost("{SensorId}")]
