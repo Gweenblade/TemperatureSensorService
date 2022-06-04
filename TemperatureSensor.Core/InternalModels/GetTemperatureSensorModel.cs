@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TemperatureSensor.Core.InternalModels
+﻿namespace TemperatureSensor.Core.InternalModels
 {
     public record GetTemperatureSensorModel
     {
+        public string SensorId { get; set; }
     }
 }
