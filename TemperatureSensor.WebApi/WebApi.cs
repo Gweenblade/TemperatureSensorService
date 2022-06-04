@@ -5,11 +5,6 @@ namespace TemperatureSensor.WebApi
 {
     public class WebApi
     {
-        protected WebApi()
-        {
-            
-        }
-
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

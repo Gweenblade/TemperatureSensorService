@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TemperatureSensor.Models.InternalModels;
+using TemperatureSensor.Models.ServiceModels;
 
 namespace TemperatureSensor.Models.Requests
 {

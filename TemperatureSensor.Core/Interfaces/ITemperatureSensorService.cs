@@ -7,7 +7,7 @@ using TemperatureSensor.Core.InternalModels;
 
 namespace TemperatureSensor.Core.Interfaces
 {
-    interface ITemperatureSensorService
+    internal interface ITemperatureSensorService
     {
         Task<string> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel);
         Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel);

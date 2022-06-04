@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureSensor.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureSensor.Core", "TemperatureSensor.Core\TemperatureSensor.Core.csproj", "{93E66222-EF00-4594-8D96-E540B224439B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureSensor.Infrastructure.DatabaseUtility", "TemperatureSensor.Infrastructure.DatabaseUtility\TemperatureSensor.Infrastructure.DatabaseUtility.csproj", "{F13AD93B-C20E-4AFD-9764-FDA136E1B0CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{93E66222-EF00-4594-8D96-E540B224439B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93E66222-EF00-4594-8D96-E540B224439B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93E66222-EF00-4594-8D96-E540B224439B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13AD93B-C20E-4AFD-9764-FDA136E1B0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13AD93B-C20E-4AFD-9764-FDA136E1B0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13AD93B-C20E-4AFD-9764-FDA136E1B0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13AD93B-C20E-4AFD-9764-FDA136E1B0CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

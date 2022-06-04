@@ -1,3 +1,4 @@
+using TemperatureSensor.Core;
 using TemperatureSensor.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 WebApi.ConfigureServices(builder.Services);
+Core.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
