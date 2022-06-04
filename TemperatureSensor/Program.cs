@@ -1,5 +1,5 @@
 using TemperatureSensor.Core;
-using TemperatureSensor.WebApi;
+using TemperatureSensor.Infrastructure.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +28,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();
 

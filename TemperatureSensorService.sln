@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureSensor", "TemperatureSensor\TemperatureSensor.csproj", "{AAB194B8-D919-4D3B-849E-1363880E05DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureSensor.WebApi", "TemperatureSensor.WebApi\TemperatureSensor.WebApi.csproj", "{0EF43F9E-803F-4578-9D74-A99F653FD037}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureSensor.Infrastructure.WebApi", "TemperatureSensor.WebApi\TemperatureSensor.Infrastructure.WebApi.csproj", "{0EF43F9E-803F-4578-9D74-A99F653FD037}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureSensor.Models", "TemperatureSensor.Models\TemperatureSensor.Models.csproj", "{9F6844F9-A616-4B2B-8A9E-00D97F2357F9}"
 EndProject

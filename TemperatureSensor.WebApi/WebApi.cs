@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace TemperatureSensor.WebApi
+namespace TemperatureSensor.Infrastructure.WebApi
 {
     public class WebApi
     {

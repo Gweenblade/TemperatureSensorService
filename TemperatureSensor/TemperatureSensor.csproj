@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TemperatureSensor.Core\TemperatureSensor.Core.csproj" />
-    <ProjectReference Include="..\TemperatureSensor.WebApi\TemperatureSensor.WebApi.csproj" />
+    <ProjectReference Include="..\TemperatureSensor.WebApi\TemperatureSensor.Infrastructure.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Models.Requests;
 
-namespace TemperatureSensor.WebApi
+namespace TemperatureSensor.Infrastructure.WebApi
 {
     [ApiController]
     [Route("TemperatureSensors")]
