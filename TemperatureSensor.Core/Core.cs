@@ -10,7 +10,7 @@ namespace TemperatureSensor.Core
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ITemperatureNotificationService, TemperatureNotificationService>();
-            services.AddSingleton<ITemperatureSensorService, TemperatureSensorService>();
+            services.AddScoped<ITemperatureSensorService, TemperatureSensorService>();
         }
     }
 }

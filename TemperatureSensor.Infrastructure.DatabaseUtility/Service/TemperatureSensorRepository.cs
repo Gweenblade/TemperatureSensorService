@@ -8,7 +8,7 @@ using TemperatureSensor.Infrastructure.DatabaseUtility.Entities;
 
 namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
 {
-    internal class TemperatureSensorRepository : ITemperatureSensorRepository
+    public class TemperatureSensorRepository : ITemperatureSensorRepository
     {
         private readonly TemperatureSensorContext _context;
         private readonly IMapper _mapper;

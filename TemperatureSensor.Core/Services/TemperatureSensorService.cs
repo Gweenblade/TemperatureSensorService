@@ -6,10 +6,10 @@ namespace TemperatureSensor.Core.Services
 {
     internal class TemperatureSensorService : ITemperatureSensorService
     {
-        private readonly ITemperatureSensorRepository _repository;
-        public TemperatureSensorService(ITemperatureSensorRepository repository)
+        private readonly ITemperatureSensorRepository _temperatureSensorRepository;
+        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
         }
         public Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
