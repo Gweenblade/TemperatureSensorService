@@ -5,6 +5,10 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.DbContexts
 {
     public class TemperatureSensorContext : DbContext
     {
-        public DbSet<TemperatureSensorEntity> TemperatureSensors { get; set; };
+        public TemperatureSensorContext(DbContextOptions<TemperatureSensorContext> options) : base(options)
+        {
+            
+        }
+        public DbSet<TemperatureSensorEntity> TemperatureSensors { get; set; }
     }
 }
