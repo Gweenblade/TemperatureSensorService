@@ -93,7 +93,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             {
                 var response = await _temperatureSensorService.GetTemperatureSensorAsync(
                     _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
-                if (string.IsNullOrEmpty(response))
+                if (response is not null)
                 {
                     return Ok();
                 }
@@ -113,9 +113,9 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
-                var response = await _temperatureSensorService.GetTemperatureSensorAsync(
+                var response = await _temperatureSensorService.GetTemperatureSensorsAsync(
                     _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorsRequest));
-                if (string.IsNullOrEmpty(response))
+                if (response is not null)
                 {
                     return Ok();
                 }

@@ -5,10 +5,10 @@ namespace TemperatureSensor.Core.Infrastructure
 {
     public interface ITemperatureSensorRepository
     {
-        Task<bool> CreateTemperatureSensorAsync();
-        Task<bool> UpdateTemperatureSensorAsync();
+        void CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel);
+        void UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel);
         Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel);
-        Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorModel getTemperatureSensorModel);
-        Task<bool> RemoveDatabaseEntryAsync();
+        Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorsModel getTemperatureSensorModel);
+        Task RemoveTemperatureSensor (RemoveTemperatureSensorModel removeTemperatureSensorModel);
     }
 }

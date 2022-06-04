@@ -9,6 +9,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.DbContexts
         {
             
         }
+
         public DbSet<TemperatureSensorEntity> TemperatureSensors { get; set; }
     }
 }

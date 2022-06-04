@@ -5,6 +5,6 @@ namespace TemperatureSensor.Models.Requests
     public record RemoveTemperatureSensorRequest
     {
         [FromRoute]
-        public string SensorId { get; set; }
+        public int Id { get; set; }
     }
 }
