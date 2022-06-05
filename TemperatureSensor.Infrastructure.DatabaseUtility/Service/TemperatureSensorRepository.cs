@@ -20,7 +20,8 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         }
         public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            var existingSensor = await _context.TemperatureSensors.AsNoTracking().FirstOrDefaultAsync(x => x.SensorId == createTemperatureSensorModel.SensorId);
+            var existingSensor = await _context.TemperatureSensors
+                .AsNoTracking().FirstOrDefaultAsync(x => x.SensorId == createTemperatureSensorModel.SensorId);
             if (existingSensor != null)
             {
                 return false;
@@ -43,7 +44,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         public async Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorsModel getTemperatureSensorModel)
         {
             var sensorDtos = await _context.TemperatureSensors
-                .Where(x => x.Meridian > getTemperatureSensorModel.Meridian).ToListAsync();
+                .Where(x => x.Meridian >= getTemperatureSensorModel.Meridian).ToListAsync();
             return _mapper.Map<IEnumerable<TemperatureSensorDto>>(sensorDtos);
         }
 

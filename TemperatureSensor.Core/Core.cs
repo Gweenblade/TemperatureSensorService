@@ -11,6 +11,7 @@ namespace TemperatureSensor.Core
         {
             services.AddScoped<ITemperatureNotificationService, TemperatureNotificationService>();
             services.AddScoped<ITemperatureSensorService, TemperatureSensorService>();
+            services.AddSingleton<ITemperatureGeneratorService, TemperatureGeneratorService>();
         }
     }
 }

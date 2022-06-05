@@ -1,5 +1,6 @@
 ﻿using TemperatureSensor.Core.Dtos;
 using TemperatureSensor.Core.Infrastructure;
+using TemperatureSensor.Core.Interfaces;
 using TemperatureSensor.Core.InternalModels;
 
 namespace TemperatureSensor.Core.Services
@@ -7,12 +8,15 @@ namespace TemperatureSensor.Core.Services
     internal class TemperatureSensorService : ITemperatureSensorService
     {
         private readonly ITemperatureSensorRepository _temperatureSensorRepository;
-        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository)
+        private readonly ITemperatureGeneratorService _temperatureGeneratorService;
+        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository, ITemperatureGeneratorService temperatureGeneratorService)
         {
             _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
+            _temperatureGeneratorService = temperatureGeneratorService ?? throw new ArgumentNullException(nameof(temperatureGeneratorService));
         }
         public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
+            createTemperatureSensorModel.Temperature = _temperatureGeneratorService.GenerateTemperature();
             return await _temperatureSensorRepository.CreateTemperatureSensorAsync(createTemperatureSensorModel);
         }
 

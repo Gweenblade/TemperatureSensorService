@@ -20,5 +20,6 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Entities
         public int Depth { get; set; }
         public int CircleOfLatitude { get; set; }
         public int Meridian { get; set; }
+        public int Temperature { get; set; }
     }
 }
