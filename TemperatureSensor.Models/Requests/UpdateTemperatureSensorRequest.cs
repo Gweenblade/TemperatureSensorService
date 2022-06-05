@@ -4,10 +4,10 @@ namespace TemperatureSensor.Models.Requests
 {
     public record UpdateTemperatureSensorRequest
     {
-        [FromRoute]
+        [FromQuery]
         public int Id { get; set; }
 
-        [FromRoute]
+        [FromQuery]
         public string SensorId { get; set; }
 
         [FromQuery]

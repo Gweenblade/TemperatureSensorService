@@ -31,9 +31,9 @@ namespace TemperatureSensor.Core.Services
             _temperatureSensorRepository.RemoveTemperatureSensor(removeTemperatureSensorModel);
         }
 
-        public void UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
+        public async Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
         {
-            _temperatureSensorRepository.UpdateTemperatureSensorAsync(updateTemperatureSensorModel);
+            return await _temperatureSensorRepository.UpdateTemperatureSensorAsync(updateTemperatureSensorModel);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         }
         public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            var existingSensor = await _context.TemperatureSensors.Where(x => x.SensorId == createTemperatureSensorModel.SensorId).FirstAsync();
+            var existingSensor = await _context.TemperatureSensors.FirstOrDefaultAsync(x => x.SensorId == createTemperatureSensorModel.SensorId);
             if (existingSensor != null)
             {
                 return false;
@@ -28,14 +28,14 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
             else
             {
                 _context.TemperatureSensors.Add(_mapper.Map<TemperatureSensorEntity>(createTemperatureSensorModel));
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
         }
 
         public async Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
         {
-            var sensorEntity = 
+            var sensorEntity =
                 await _context.TemperatureSensors.Where(x => x.SensorId == getTemperatureSensorModel.SensorId).FirstAsync();
             var sensorDto = sensorEntity != null ? _mapper.Map<TemperatureSensorDto>(sensorEntity) : null;
             return sensorDto;
@@ -56,9 +56,21 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
             _context.TemperatureSensors.Remove(entity);
         }
 
-        public void UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
+        public async Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
         {
-            _context.TemperatureSensors.Update(_mapper.Map<TemperatureSensorEntity>(updateTemperatureSensorModel));
+            var existingSensor =
+                    await _context.TemperatureSensors.FirstOrDefaultAsync(x => x.SensorId == updateTemperatureSensorModel.SensorId);
+            if (existingSensor == null)
+            {
+                return false;
+            }
+            else
+            {
+                _context.TemperatureSensors.Update(
+                    _mapper.Map<TemperatureSensorEntity>(updateTemperatureSensorModel));
+                await _context.SaveChangesAsync();
+                return true;
+            }
         }
     }
 }
