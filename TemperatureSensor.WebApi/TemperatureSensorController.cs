@@ -21,113 +21,59 @@ namespace TemperatureSensor.Infrastructure.WebApi
         }
 
         [HttpPost("{SensorId}")]
-        public async Task<IActionResult> CreateTemperatureSensorAsync([FromRoute] CreateTemperatureSensorRequest createTemperatureSensorRequest)
+        public async Task<IActionResult> CreateTemperatureSensorAsync(
+            [FromRoute] CreateTemperatureSensorRequest createTemperatureSensorRequest)
         {
-            try
+
+            var isSuccess = await _temperatureSensorService.CreateTemperatureSensorAsync(
+                _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
+            if (isSuccess)
             {
-                _temperatureSensorService.CreateTemperatureSensorAsync(
-                    _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
-                if (response)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return Conflict();
-                }
+                return Ok();
             }
-            catch (Exception ex)
+            else
             {
-                throw;
+                return Conflict();
             }
+
         }
 
         [HttpPatch("{SensorId}")]
-        public async Task<IActionResult> UpdateTemperatureSensorAsync([FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
+        public async Task<IActionResult> UpdateTemperatureSensorAsync(
+            [FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
-            try
-            {
-                _temperatureSensorService.UpdateTemperatureSensorAsync(
-                    _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
-                if (response)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return Conflict();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+
+            _temperatureSensorService.UpdateTemperatureSensorAsync(
+                _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
+            return Ok();
         }
 
         [HttpDelete("{SensorId}")]
-        public async Task<IActionResult> RemoveTemperatureSensorAsync([FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
+        public async Task<IActionResult> RemoveTemperatureSensorAsync(
+            [FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
         {
-            try
-            {
-                _temperatureSensorService.RemoveTemperatureSensorAsync(
+            _temperatureSensorService.RemoveTemperatureSensorAsync(
                     _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
-                if (response)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return Conflict();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            return Ok();
         }
 
         [HttpGet("{SensorId}")]
-        public async Task<IActionResult> GetTemperatureSensorAsync([FromRoute] GetTemperatureSensorRequest getTemperatureSensorRequest)
+        public async Task<IActionResult> GetTemperatureSensorAsync(
+            [FromRoute] GetTemperatureSensorRequest getTemperatureSensorRequest)
         {
-            try
-            {
-                var response = await _temperatureSensorService.GetTemperatureSensorAsync(
-                    _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
-                if (response is not null)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return NoContent();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            var response = await _temperatureSensorService.GetTemperatureSensorAsync(
+                _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
+            return Ok();
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> GetTemperatureSensorsAsync([FromRoute] GetTemperatureSensorsRequest getTemperatureSensorsRequest)
+        public async Task<IActionResult> GetTemperatureSensorsAsync(
+            [FromRoute] GetTemperatureSensorsRequest getTemperatureSensorsRequest)
         {
-            try
-            {
-                var response = await _temperatureSensorService.GetTemperatureSensorsAsync(
-                    _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorsRequest));
-                if (response is not null)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return NoContent();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+
+            var response = await _temperatureSensorService.GetTemperatureSensorsAsync(
+                _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorsRequest));
+            return Ok();
         }
     }
 }

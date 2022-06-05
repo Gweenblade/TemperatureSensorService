@@ -11,9 +11,9 @@ namespace TemperatureSensor.Core.Services
         {
             _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
         }
-        public void CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
+        public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            _temperatureSensorRepository.CreateTemperatureSensorAsync(createTemperatureSensorModel);
+            return await _temperatureSensorRepository.CreateTemperatureSensorAsync(createTemperatureSensorModel);
         }
 
         public Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)

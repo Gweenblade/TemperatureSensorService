@@ -18,9 +18,19 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-        public void CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
+        public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            _context.TemperatureSensors.Add(_mapper.Map<TemperatureSensorEntity>(createTemperatureSensorModel));
+            var existingSensor = await _context.TemperatureSensors.Where(x => x.SensorId == createTemperatureSensorModel.SensorId).FirstAsync();
+            if (existingSensor != null)
+            {
+                return false;
+            }
+            else
+            {
+                _context.TemperatureSensors.Add(_mapper.Map<TemperatureSensorEntity>(createTemperatureSensorModel));
+                _context.SaveChanges();
+                return true;
+            }
         }
 
         public async Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
