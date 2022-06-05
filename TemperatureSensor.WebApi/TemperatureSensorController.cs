@@ -42,18 +42,25 @@ namespace TemperatureSensor.Infrastructure.WebApi
         public async Task<IActionResult> UpdateTemperatureSensorAsync(
             [FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
-            await _temperatureSensorService.UpdateTemperatureSensorAsync(
+            var isSuccess = await _temperatureSensorService.UpdateTemperatureSensorAsync(
                 _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
-            return Ok();
+            if (isSuccess)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NoContent();
+            }
         }
 
-        [HttpDelete("{SensorId}")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> RemoveTemperatureSensorAsync(
             [FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
         {
-            _temperatureSensorService.RemoveTemperatureSensorAsync(
+            await _temperatureSensorService.RemoveTemperatureSensorAsync(
                     _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
-            return Ok();
+            return NoContent();
         }
 
         [HttpGet("{SensorId}")]

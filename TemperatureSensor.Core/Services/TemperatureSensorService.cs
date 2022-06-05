@@ -26,9 +26,9 @@ namespace TemperatureSensor.Core.Services
             throw new NotImplementedException();
         }
 
-        public void RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel)
+        public async Task RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel)
         {
-            _temperatureSensorRepository.RemoveTemperatureSensor(removeTemperatureSensorModel);
+            await _temperatureSensorRepository.RemoveTemperatureSensor(removeTemperatureSensorModel);
         }
 
         public async Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)

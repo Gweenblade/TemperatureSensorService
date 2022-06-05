@@ -9,6 +9,6 @@ namespace TemperatureSensor.Core.Infrastructure
         Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorModel getTemperatureSensorModel);
         Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel);
         Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel);
-        void RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel);
+        Task RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel);
     }
 }

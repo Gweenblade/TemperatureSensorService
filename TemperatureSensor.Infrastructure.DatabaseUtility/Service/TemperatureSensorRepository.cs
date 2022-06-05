@@ -20,7 +20,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         }
         public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
-            var existingSensor = await _context.TemperatureSensors.FirstOrDefaultAsync(x => x.SensorId == createTemperatureSensorModel.SensorId);
+            var existingSensor = await _context.TemperatureSensors.AsNoTracking().FirstOrDefaultAsync(x => x.SensorId == createTemperatureSensorModel.SensorId);
             if (existingSensor != null)
             {
                 return false;
@@ -28,7 +28,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
             else
             {
                 _context.TemperatureSensors.Add(_mapper.Map<TemperatureSensorEntity>(createTemperatureSensorModel));
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return true;
             }
         }
@@ -51,9 +51,10 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
 
         public async Task RemoveTemperatureSensor(RemoveTemperatureSensorModel removeTemperatureSensorModel)
         {
-            var entity = await _context.TemperatureSensors.Where(x => x.Id == removeTemperatureSensorModel.Id)
+            var entity = await _context.TemperatureSensors.AsNoTracking().Where(x => x.Id == removeTemperatureSensorModel.Id)
                 .FirstAsync();
             _context.TemperatureSensors.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
