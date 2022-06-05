@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "avid-theme-352412",
+  "private_key_id": "1af6ee027ba0f33e920ca97e87a2f5875a892074",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDEa1b8b4gM0DUX\nmOhSBgdpgvHnWwpcO5pJSYgKdcQib5WeJXTDlKaqmk5PXWfjKDIHMBprhS0oFrLr\niSpsg0iKRyD1kKow0gy6cwXVR6sA28BLFROLxfkBwJE9rZx8WcQkp6QY1/NHpmDv\n/67NCQQT02Y+Fw1CCvxCQT7QpjrOlPjgQS+trkdYwA00hd4gCpquHr1vZxmNiRte\nW+Iz8MyLleyDC2Z7w7RkFgtY0fOTTC6TwPzNy8CnWmdaU//KDO+OAR6X+DQ0Ag4B\nELGS3yNOMagKTEUaf+KDoajWDDli5v4vAGGWVyMRzLJjNcJHOVttubho0DfKZoLs\nen2nCXTJAgMBAAECggEADmeZ1kL+rQPi9ONRnFxVVFNWVsN6N8fmOXwzRiMbWnQo\n+pNgJAzFiUruNctRmFrlClpogZyfcmpxvizNx+371qo/PEsa9CAfb1gKpDjQjWxQ\nRqFZ0N0YtRxwel++U29I33BM7EaAEK/euZMceGxyGFsfSyvpHMAN/nTm/KnIM8if\njQSDtd6gqiF02Yf+tEghBvhRJvMaikLqiSO4uhKpKkEKVhvhVWAUyA21q9pR6TCp\nEbqkfOuebANZi01zGtUa8iGl6lDiRZDXoBJ9S6Rg/zPryGSHo6okyub/waiCaFTW\nwS/zlOmtR0VTBi0ribF2T+MM7wP9NK7+7SXP435qwQKBgQD17zoe6ul3MBcz/hNX\n+95EAXuVXaYoZaIRJCqaYHNCjn89LwqwpMlb1mZum9/4UCNUs/uXrEZYifLJHbak\n0d7lOCXvFUdTUfFxkLgitfbGmLuJAv2ItmtHz2T89I1//9sgojUm0fZ1hTjRy0Gk\nf5lZIdRCPF07y9IlVhjmU0td6QKBgQDMdVGLAgB0IazwAqSiAqAyqaLe0TKKk54v\nhb8/38YSZvdqAqujMnM089+XVBUOGpvLU1sfMSX+IDaZUKfTn7y02O8QWl4TLiV6\n+vWWWlJdBikkZ6HTdQsV7YUrJZDG83jJIpnkjaKYYSYSPE10inAjP49KQQNfB5Vw\nNXfQRtKz4QKBgG7loN+wLfaAyPW47CAQgvlHceK4h+RPb/UqycszEsZAWz/LppZg\nuCuhUi8uOqBOAqB/SEPsewwRqFjn/SP1Pv09hF16yt7XZHhBOcbtJooG9QmjP5AW\nMen/qxolbGj7hmQAwNbwdqInoKd5b/AtWYjHqF71uVTtY6VSXYf+p02BAoGAOH+a\n3uzYrz63CUPRtqs/FYDm7uekLcMJDVzKMp5ln6Qwbmz6fQht6Y4SlUC46MLVlmQc\nZAwy0XyZWdh95+7WOKtRtJUkNeykks1SnA+tfuM670Jr54EKZS7Tg87HqRKSqBIV\nsKCq86y01okvZirzPepMcFpy0gnIc89yom1PwEECgYBj+hvtXaWg+ubSYjnPUS8o\nAJfYY7B/j9CB24CoqMIWabnoCHwvHfbI5dUp2wLBPnGhvim5g75bwa+/qQTVRGze\nNjev26cfwy3tFGlPo7JbfH0Qlg8vUzf0+aQaC1gRqLNFMz+Qjo5b7uoUwgd/RFHZ\n4HLwBbLtyk97j2DYRqpDvQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "temperaturesensorservice@avid-theme-352412.iam.gserviceaccount.com",
+  "client_id": "109474992942013361846",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/temperaturesensorservice%40avid-theme-352412.iam.gserviceaccount.com"
+}
