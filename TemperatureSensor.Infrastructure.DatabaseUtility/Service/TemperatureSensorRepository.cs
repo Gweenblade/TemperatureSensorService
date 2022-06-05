@@ -36,9 +36,8 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         public async Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
         {
             var sensorEntity =
-                await _context.TemperatureSensors.Where(x => x.SensorId == getTemperatureSensorModel.SensorId).FirstAsync();
-            var sensorDto = sensorEntity != null ? _mapper.Map<TemperatureSensorDto>(sensorEntity) : null;
-            return sensorDto;
+                await _context.TemperatureSensors.Where(x => x.SensorId == getTemperatureSensorModel.SensorId).FirstOrDefaultAsync();
+            return _mapper.Map<TemperatureSensorDto>(sensorEntity);
         }
 
         public async Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorsModel getTemperatureSensorModel)

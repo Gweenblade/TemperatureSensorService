@@ -16,14 +16,14 @@ namespace TemperatureSensor.Core.Services
             return await _temperatureSensorRepository.CreateTemperatureSensorAsync(createTemperatureSensorModel);
         }
 
-        public Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
+        public async Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
         {
-            throw new NotImplementedException();
+            return await _temperatureSensorRepository.GetTemperatureSensorAsync(getTemperatureSensorModel);
         }
 
-        public Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorModel getTemperatureSensorModel)
+        public async Task<IEnumerable<TemperatureSensorDto>> GetTemperatureSensorsAsync(GetTemperatureSensorsModel getTemperatureSensorsModel)
         {
-            throw new NotImplementedException();
+            return await _temperatureSensorRepository.GetTemperatureSensorsAsync(getTemperatureSensorsModel);
         }
 
         public async Task RemoveTemperatureSensorAsync(RemoveTemperatureSensorModel removeTemperatureSensorModel)

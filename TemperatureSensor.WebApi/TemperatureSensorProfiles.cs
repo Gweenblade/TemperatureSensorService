@@ -13,6 +13,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             CreateMap<GetTemperatureSensorRequest, GetTemperatureSensorModel>();
             CreateMap<RemoveTemperatureSensorRequest, RemoveTemperatureSensorModel>();
             CreateMap<UpdateTemperatureSensorRequest, UpdateTemperatureSensorModel>();
+            CreateMap<GetTemperatureSensorsRequest, GetTemperatureSensorsModel>();
 
             CreateMap<GetTemperatureSensorModel, GetTemperatureSensorResponse>();
         }
