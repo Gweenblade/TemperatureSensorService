@@ -17,6 +17,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Profiles
             CreateMap<TemperatureSensorEntity, TemperatureSensorDto>();
             CreateMap<CreateTemperatureSensorModel, TemperatureSensorEntity>();
             CreateMap<RemoveTemperatureSensorModel, TemperatureSensorEntity>();
+            CreateMap<UpdateTemperatureSensorModel, TemperatureSensorEntity>();
         }
     }
 }

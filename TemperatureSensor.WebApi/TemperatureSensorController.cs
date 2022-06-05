@@ -42,7 +42,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
         public async Task<IActionResult> UpdateTemperatureSensorAsync(
             [FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
-            _temperatureSensorService.UpdateTemperatureSensorAsync(
+            await _temperatureSensorService.UpdateTemperatureSensorAsync(
                 _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
             return Ok();
         }
