@@ -9,8 +9,8 @@ namespace TemperatureSensor.Core.Services
     {
         private readonly ITemperatureSensorRepository _temperatureSensorRepository;
         private readonly ITemperatureGeneratorService _temperatureGeneratorService;
-        private readonly ITemperatureNotificationService _temperatureNotificationService;
-        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository, ITemperatureGeneratorService temperatureGeneratorService , ITemperatureNotificationService temperatureNotificationService)
+        private readonly ITemperatureNotificationJob _temperatureNotificationService;
+        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository, ITemperatureGeneratorService temperatureGeneratorService , ITemperatureNotificationJob temperatureNotificationService)
         {
             _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
             _temperatureGeneratorService = temperatureGeneratorService ?? throw new ArgumentNullException(nameof(temperatureGeneratorService));

@@ -1,33 +1,33 @@
-﻿using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Google.Apis.Auth.OAuth2;
+﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
-using Google.Apis.Drive.v3.Data;
-using Google.Apis.Http;
 using Google.Apis.Services;
 using Google.Apis.Upload;
 using Newtonsoft.Json;
+using Quartz;
+using System.Text;
 using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Core.Interfaces;
 using TemperatureSensor.Core.InternalModels;
-using File = Google.Apis.Drive.v3.Data.File;
 
-namespace TemperatureSensor.Core.Services
+namespace TemperatureSensor.Core.Jobs
 {
-    internal class TemperatureNotificationService : ITemperatureNotificationService
+    [DisallowConcurrentExecution]
+    internal class TemperatureNotificationJob : IJob, ITemperatureNotificationJob
     {
         private readonly string PathToServiceAccountKey = "../key.json";
 
-        private readonly string AccountEmail = "temperaturesensorservice@avid-theme-352412.iam.gserviceaccount.com";
         private readonly string Directory = "1kMzODBDotvTLaei_Ci01LltJAxetSDL3";
 
         private DriveService _service;
         ITemperatureSensorRepository _temperatureSensorRepository;
-        public TemperatureNotificationService(ITemperatureSensorRepository temperatureSensorRepository)
+        public TemperatureNotificationJob(ITemperatureSensorRepository temperatureSensorRepository)
         {
             _temperatureSensorRepository = temperatureSensorRepository;
             _service ??= CreateDriveService();
+        }
+        public async Task Execute(IJobExecutionContext context)
+        {
+            await SendNotificationToDrive();
         }
 
         public async Task SendNotificationToDrive()
@@ -39,7 +39,7 @@ namespace TemperatureSensor.Core.Services
             var fileMetadata = new Google.Apis.Drive.v3.Data.File()
             {
                 Name = $"{DateTime.UtcNow.ToShortDateString()}-{DateTime.UtcNow.ToShortTimeString()}",
-                Parents = new List<string>(){ $"{Directory}" },
+                Parents = new List<string>() { $"{Directory}" },
             };
 
             await UploadFileToDrive(fileName, fileMetadata);
@@ -76,7 +76,7 @@ namespace TemperatureSensor.Core.Services
             return localFileName;
         }
 
-        private async Task UploadFileToDrive(string fileName, File fileMetadata)
+        private async Task UploadFileToDrive(string fileName, Google.Apis.Drive.v3.Data.File fileMetadata)
         {
             using (var fsSource = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
