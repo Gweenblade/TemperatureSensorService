@@ -2,6 +2,6 @@
 {
     public record GetTemperatureSensorsModel
     {
-        public int Meridian { get; set; } 
+        public int Meridian { get; set; } = 0;
     }
 }

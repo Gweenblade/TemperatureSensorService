@@ -2,6 +2,6 @@
 {
     internal interface ITemperatureNotificationService
     {
-        public Task<bool> SendNotificationToDrive();
+        public Task SendNotificationToDrive();
     }
 }
