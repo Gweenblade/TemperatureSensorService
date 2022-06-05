@@ -9,12 +9,10 @@ namespace TemperatureSensor.Core.Services
     {
         private readonly ITemperatureSensorRepository _temperatureSensorRepository;
         private readonly ITemperatureGeneratorService _temperatureGeneratorService;
-        private readonly ITemperatureNotificationJob _temperatureNotificationService;
-        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository, ITemperatureGeneratorService temperatureGeneratorService , ITemperatureNotificationJob temperatureNotificationService)
+        public TemperatureSensorService(ITemperatureSensorRepository temperatureSensorRepository, ITemperatureGeneratorService temperatureGeneratorService)
         {
             _temperatureSensorRepository = temperatureSensorRepository ?? throw new ArgumentNullException(nameof(temperatureSensorRepository));
             _temperatureGeneratorService = temperatureGeneratorService ?? throw new ArgumentNullException(nameof(temperatureGeneratorService));
-            _temperatureNotificationService = temperatureNotificationService ?? throw new ArgumentNullException(nameof(temperatureNotificationService));
         }
         public async Task<bool> CreateTemperatureSensorAsync(CreateTemperatureSensorModel createTemperatureSensorModel)
         {
@@ -24,7 +22,6 @@ namespace TemperatureSensor.Core.Services
 
         public async Task<TemperatureSensorDto> GetTemperatureSensorAsync(GetTemperatureSensorModel getTemperatureSensorModel)
         {
-            await _temperatureNotificationService.SendNotificationToDrive();
             return await _temperatureSensorRepository.GetTemperatureSensorAsync(getTemperatureSensorModel);
         }
 

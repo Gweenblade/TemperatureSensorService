@@ -18,20 +18,16 @@ namespace TemperatureSensor.Core
 
             services.AddQuartz(q =>
             {
-                // Use a Scoped container to create jobs. I'll touch on this later
                 q.UseMicrosoftDependencyInjectionJobFactory();
 
-                // Create a "key" for the job
                 var jobKey = new JobKey("TemperatureNotificationJob");
 
-                // Register the job with the DI container
                 q.AddJob<TemperatureNotificationJob>(opts => opts.WithIdentity(jobKey));
 
-                // Create a trigger for the job
                 q.AddTrigger(opts => opts
-                    .ForJob(jobKey) // link to the HelloWorldJob
-                    .WithIdentity("TemperatureNotificationJob-trigger") // give the trigger a unique name
-                    .WithCronSchedule("0 * * ? * *")); // run every 5 seconds
+                    .ForJob(jobKey) 
+                    .WithIdentity("TemperatureNotificationJob-trigger") 
+                    .WithCronSchedule("0 0 * ? * *")); 
             });
 
             services.AddQuartzHostedService(
