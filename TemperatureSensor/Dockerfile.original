@@ -8,10 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["TemperatureSensor/TemperatureSensor.csproj", "TemperatureSensor/"]
-COPY ["TemperatureSensor.Infrastructure.DatabaseUtility/TemperatureSensor.Infrastructure.DatabaseUtility.csproj", "TemperatureSensor.Infrastructure.DatabaseUtility/"]
-COPY ["TemperatureSensor.Core/TemperatureSensor.Core.csproj", "TemperatureSensor.Core/"]
-COPY ["TemperatureSensor.WebApi/TemperatureSensor.Infrastructure.WebApi.csproj", "TemperatureSensor.WebApi/"]
-COPY ["TemperatureSensor.Models/TemperatureSensor.Models.csproj", "TemperatureSensor.Models/"]
 RUN dotnet restore "TemperatureSensor/TemperatureSensor.csproj"
 COPY . .
 WORKDIR "/src/TemperatureSensor"

@@ -24,33 +24,45 @@ namespace TemperatureSensor.Infrastructure.WebApi
         public async Task<IActionResult> CreateTemperatureSensorAsync(
             [FromRoute] CreateTemperatureSensorRequest createTemperatureSensorRequest)
         {
-
-            var isSuccess = await _temperatureSensorService.CreateTemperatureSensorAsync(
-                _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
-            if (isSuccess)
+            try
             {
-                return Ok();
+                var isSuccess = await _temperatureSensorService.CreateTemperatureSensorAsync(
+                    _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
+                if (isSuccess)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return Conflict();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                return Conflict();
+                return Conflict(ex.Message);
             }
-
         }
 
         [HttpPatch("")]
         public async Task<IActionResult> UpdateTemperatureSensorAsync(
             [FromRoute] UpdateTemperatureSensorRequest updateTemperatureSensorRequest)
         {
-            var isSuccess = await _temperatureSensorService.UpdateTemperatureSensorAsync(
-                _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
-            if (isSuccess)
+            try
             {
-                return Ok();
+                var isSuccess = await _temperatureSensorService.UpdateTemperatureSensorAsync(
+                    _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
+                if (isSuccess)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NoContent();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NoContent();
+                return Conflict(ex.Message);
             }
         }
 
@@ -58,24 +70,38 @@ namespace TemperatureSensor.Infrastructure.WebApi
         public async Task<IActionResult> RemoveTemperatureSensorAsync(
             [FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
         {
-            await _temperatureSensorService.RemoveTemperatureSensorAsync(
-                    _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
-            return NoContent();
+            try
+            {
+                await _temperatureSensorService.RemoveTemperatureSensorAsync(
+                        _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
 
         [HttpGet("{SensorId}")]
         public async Task<IActionResult> GetTemperatureSensorAsync(
             [FromRoute] GetTemperatureSensorRequest getTemperatureSensorRequest)
         {
-            var sensor = await _temperatureSensorService.GetTemperatureSensorAsync(
-                _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
-            if (sensor != null)
+            try
             {
-                return Ok(sensor);
+                var sensor = await _temperatureSensorService.GetTemperatureSensorAsync(
+                    _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
+                if (sensor != null)
+                {
+                    return Ok(sensor);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                return Conflict(ex.Message);
             }
         }
 
@@ -83,10 +109,16 @@ namespace TemperatureSensor.Infrastructure.WebApi
         public async Task<IActionResult> GetTemperatureSensorsAsync(
             [FromRoute] GetTemperatureSensorsRequest getTemperatureSensorsRequest)
         {
-
-            var sensors = await _temperatureSensorService.GetTemperatureSensorsAsync(
-                _mapper.Map<GetTemperatureSensorsModel>(getTemperatureSensorsRequest));
-            return Ok(sensors);
+            try
+            {
+                var sensors = await _temperatureSensorService.GetTemperatureSensorsAsync(
+                    _mapper.Map<GetTemperatureSensorsModel>(getTemperatureSensorsRequest));
+                return Ok(sensors);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
     }
 }
