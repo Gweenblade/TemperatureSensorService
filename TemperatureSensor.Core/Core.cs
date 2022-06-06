@@ -27,7 +27,7 @@ namespace TemperatureSensor.Core
                 q.AddTrigger(opts => opts
                     .ForJob(jobKey) 
                     .WithIdentity("TemperatureNotificationJob-trigger") 
-                    .WithCronSchedule("0/30 * * ? * *")); 
+                    .WithCronSchedule("0 0 * ? * *")); 
             });
 
             services.AddQuartzHostedService(

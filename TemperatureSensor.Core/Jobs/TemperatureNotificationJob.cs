@@ -54,7 +54,7 @@ namespace TemperatureSensor.Core.Jobs
                 ClientEmail = "temperaturesensorservice@avid-theme-352412.iam.gserviceaccount.com",
                 ProjectId = "avid-theme-352412",
                 PrivateKeyId = "1af6ee027ba0f33e920ca97e87a2f5875a892074",
-                PrivateKey = Environment.GetEnvironmentVariable("APPSETTING_drivekey").Replace("\\n", "\n"),
+                PrivateKey = Environment.GetEnvironmentVariable("APPSETTING_drivekey")?.Replace("\\n", "\n"),
                 ClientId = "client_id",
             }; ;
             var creditential = GoogleCredential.FromJsonParameters(creds)
