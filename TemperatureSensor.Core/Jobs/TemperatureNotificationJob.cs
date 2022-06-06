@@ -17,7 +17,6 @@ namespace TemperatureSensor.Core.Jobs
         private readonly string PathToServiceAccountKey = "../key.json";
 
         private readonly string Directory = "1kMzODBDotvTLaei_Ci01LltJAxetSDL3";
-
         private DriveService _service;
         ITemperatureSensorRepository _temperatureSensorRepository;
         public TemperatureNotificationJob(ITemperatureSensorRepository temperatureSensorRepository)
@@ -49,7 +48,16 @@ namespace TemperatureSensor.Core.Jobs
 
         private DriveService CreateDriveService()
         {
-            var creditential = GoogleCredential.FromFile(PathToServiceAccountKey)
+            var creds = new JsonCredentialParameters
+            {
+                Type = "service_account",
+                ClientEmail = "temperaturesensorservice@avid-theme-352412.iam.gserviceaccount.com",
+                ProjectId = "avid-theme-352412",
+                PrivateKeyId = "1af6ee027ba0f33e920ca97e87a2f5875a892074",
+                PrivateKey = Environment.GetEnvironmentVariable("APPSETTING_drivekey").Replace("\\n", "\n"),
+                ClientId = "client_id",
+            }; ;
+            var creditential = GoogleCredential.FromJsonParameters(creds)
                 .CreateScoped(DriveService.ScopeConstants.Drive);
 
             return new DriveService(new BaseClientService.Initializer()
