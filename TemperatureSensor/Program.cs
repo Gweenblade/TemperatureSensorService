@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 WebApi.ConfigureServices(builder.Services);
-DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["ConnectionStrings:DbConnectionString"]);
+DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["dbconnectionstring"]);
 Core.ConfigureServices(builder.Services);
 
 var app = builder.Build();
