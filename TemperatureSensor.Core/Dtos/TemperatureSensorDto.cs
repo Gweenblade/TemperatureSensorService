@@ -2,6 +2,7 @@
 {
     public class TemperatureSensorDto
     {
+        public int Id { get; set; }
         public string SensorId { get; set; }
 
         public int Depth { get; set; }

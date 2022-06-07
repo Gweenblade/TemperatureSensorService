@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Core.InternalModels;
@@ -7,6 +8,7 @@ using TemperatureSensor.Models.Requests;
 namespace TemperatureSensor.Infrastructure.WebApi
 {
     [ApiController]
+    [Authorize]
     [Route("TemperatureSensors")]
     public class TemperatureSensorController : ControllerBase
     {
@@ -26,6 +28,11 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
+                var isAdmin = User.Claims.FirstOrDefault(c => c.Type == "isAdmin")?.Value;
+                if (!Boolean.Parse(isAdmin))
+                {
+                    return Forbid();
+                }
                 var isSuccess = await _temperatureSensorService.CreateTemperatureSensorAsync(
                     _mapper.Map<CreateTemperatureSensorModel>(createTemperatureSensorRequest));
                 if (isSuccess)
@@ -39,7 +46,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             }
             catch(Exception ex)
             {
-                return Conflict(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -49,6 +56,11 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
+                var isAdmin = User.Claims.FirstOrDefault(c => c.Type == "isAdmin")?.Value;
+                if (!Boolean.Parse(isAdmin))
+                {
+                    return Forbid();
+                }
                 var isSuccess = await _temperatureSensorService.UpdateTemperatureSensorAsync(
                     _mapper.Map<UpdateTemperatureSensorModel>(updateTemperatureSensorRequest));
                 if (isSuccess)
@@ -62,7 +74,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             }
             catch (Exception ex)
             {
-                return Conflict(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -72,13 +84,18 @@ namespace TemperatureSensor.Infrastructure.WebApi
         {
             try
             {
+                var isAdmin = User.Claims.FirstOrDefault(c => c.Type == "isAdmin")?.Value;
+                if (!Boolean.Parse(isAdmin))
+                {
+                    return Forbid();
+                }
                 await _temperatureSensorService.RemoveTemperatureSensorAsync(
                         _mapper.Map<RemoveTemperatureSensorModel>(removeTemperatureSensorRequest));
                 return NoContent();
             }
             catch (Exception ex)
             {
-                return Conflict(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -101,7 +118,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             }
             catch (Exception ex)
             {
-                return Conflict(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -117,7 +134,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             }
             catch (Exception ex)
             {
-                return Conflict(ex.Message);
+                return StatusCode(500);
             }
         }
     }

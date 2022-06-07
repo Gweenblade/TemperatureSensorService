@@ -10,7 +10,11 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
-WebApi.ConfigureServices(builder.Services);
+WebApi.ConfigureServices(builder.Services, 
+    builder.Configuration["Issuer"], 
+    builder.Configuration["Audience"], 
+    builder.Configuration["SecretForKey"]);
+
 DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["dbconnectionstring"]);
 Core.ConfigureServices(builder.Services);
 
@@ -23,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
