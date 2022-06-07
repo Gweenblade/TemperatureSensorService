@@ -15,16 +15,15 @@ WebApi.ConfigureServices(builder.Services,
     builder.Configuration["Audience"], 
     builder.Configuration["SecretForKey"]);
 
-DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["dbconnectionstring"]);
+DatabaseUtility.ConfigureServices(builder.Services, builder.Configuration["SqlConnectionString"]);
 Core.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseHttpsRedirection();
 

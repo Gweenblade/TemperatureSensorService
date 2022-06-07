@@ -7,7 +7,7 @@ using System.Text;
 
 namespace TemperatureSensor.Infrastructure.WebApi
 {
-    [Route("Api/Authentication")]
+    [Route("Authentication")]
     public class AuthenticationController : ControllerBase
     {
         private IConfiguration _configuration;

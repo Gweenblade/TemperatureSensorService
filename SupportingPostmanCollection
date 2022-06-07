@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "ddd516a9-a86d-4fb8-9849-4d134d7e8967",
+		"name": "TemperatureSensorLocal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LocalRuns",
+			"item": [
+				{
+					"name": "GetAdminToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/Authentication/Admin/BestPasswordEver",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"Authentication",
+								"Admin",
+								"BestPasswordEver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSensorToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/Authentication/Admin/NotTheBestPasswordEver",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"Authentication",
+								"Admin",
+								"NotTheBestPasswordEver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjcyNDYsImV4cCI6MTY1NDY0MTY0NiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.s9DyDP_ImRj5YuIqK742EHwzYVjvAPd-TvyDpJYqwvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/TemperatureSensors/Bestsensor?Depth=999&CircleOfLatitude=999&Meridian=999",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"TemperatureSensors",
+								"Bestsensor"
+							],
+							"query": [
+								{
+									"key": "Depth",
+									"value": "999"
+								},
+								{
+									"key": "CircleOfLatitude",
+									"value": "999"
+								},
+								{
+									"key": "Meridian",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTemperatureSensors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/TemperatureSensors",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"TemperatureSensors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTemperatureSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/TemperatureSensors/Bestsensor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"TemperatureSensors",
+								"Bestsensor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchTemperatureSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/TemperatureSensors?Id=7&SensorId=Bestsensor123&Depth=5&CircleOfLatitude=5&Meridian=5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"TemperatureSensors"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "7"
+								},
+								{
+									"key": "SensorId",
+									"value": "Bestsensor123"
+								},
+								{
+									"key": "Depth",
+									"value": "5"
+								},
+								{
+									"key": "CircleOfLatitude",
+									"value": "5"
+								},
+								{
+									"key": "Meridian",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7195/TemperatureSensors/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7195",
+							"path": [
+								"TemperatureSensors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CloudRuns",
+			"item": [
+				{
+					"name": "GetAdminToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/Authentication/Admin/BestPasswordEver",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"Authentication",
+								"Admin",
+								"BestPasswordEver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSensorToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/Authentication/Admin/NotTheBestPasswordEver",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"Authentication",
+								"Admin",
+								"NotTheBestPasswordEver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IkZhbHNlIiwibmJmIjoxNjU0NjI5NjQwLCJleHAiOjE2NTQ2NDQwNDAsImlzcyI6IkF1dGhlbnRpY2F0aW9uQXBpIiwiYXVkIjoiVGVtcGVyYXR1cmVTZW5zb3JBcGkifQ.wfkEUXg8nnLEoKQ-xC9FM-zDEv2H3t9PXB7qtLqSY08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/BetterSbbensor?Depth=999&CircleOfLatitude=999&Meridian=999",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"TemperatureSensors",
+								"BetterSbbensor"
+							],
+							"query": [
+								{
+									"key": "Depth",
+									"value": "999"
+								},
+								{
+									"key": "CircleOfLatitude",
+									"value": "999"
+								},
+								{
+									"key": "Meridian",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTemperatureSensors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IkZhbHNlIiwibmJmIjoxNjU0NjI5NjQwLCJleHAiOjE2NTQ2NDQwNDAsImlzcyI6IkF1dGhlbnRpY2F0aW9uQXBpIiwiYXVkIjoiVGVtcGVyYXR1cmVTZW5zb3JBcGkifQ.wfkEUXg8nnLEoKQ-xC9FM-zDEv2H3t9PXB7qtLqSY08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"TemperatureSensors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTemperatureSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/Bestsensor",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"TemperatureSensors",
+								"Bestsensor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatchTemperatureSensor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors?Id=2&SensorId=Bestsensor123&Depth=5&CircleOfLatitude=5&Meridian=5",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"TemperatureSensors"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								},
+								{
+									"key": "SensorId",
+									"value": "Bestsensor123"
+								},
+								{
+									"key": "Depth",
+									"value": "5"
+								},
+								{
+									"key": "CircleOfLatitude",
+									"value": "5"
+								},
+								{
+									"key": "Meridian",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/2",
+							"protocol": "https",
+							"host": [
+								"temperaturesensorservice",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"TemperatureSensors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
