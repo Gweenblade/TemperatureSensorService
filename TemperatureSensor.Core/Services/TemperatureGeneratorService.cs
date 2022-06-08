@@ -4,10 +4,10 @@ namespace TemperatureSensor.Core.Services
 {
     internal class TemperatureGeneratorService : ITemperatureGeneratorService
     {
-        private Random _random;
+        private readonly Random _random;
         public TemperatureGeneratorService()
         {
-            _random = new Random();
+            _random ??= new Random();
         }
 
         public int GenerateTemperature()
