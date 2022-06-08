@@ -78,7 +78,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             }
         }
 
-        [HttpDelete("{Id}")]
+        [HttpDelete("{SensorId}")]
         public async Task<IActionResult> RemoveTemperatureSensorAsync(
             [FromRoute] RemoveTemperatureSensorRequest removeTemperatureSensorRequest)
         {

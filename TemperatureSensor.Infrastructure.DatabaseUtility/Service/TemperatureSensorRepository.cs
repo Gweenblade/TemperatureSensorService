@@ -51,7 +51,7 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
 
         public async Task RemoveTemperatureSensor(RemoveTemperatureSensorModel removeTemperatureSensorModel)
         {
-            var entity = await _context.TemperatureSensors.AsNoTracking().Where(x => x.Id == removeTemperatureSensorModel.Id)
+            var entity = await _context.TemperatureSensors.AsNoTracking().Where(x => x.SensorId == removeTemperatureSensorModel.SensorId)
                 .FirstAsync();
             _context.TemperatureSensors.Remove(entity);
             await _context.SaveChangesAsync();

@@ -2,6 +2,6 @@
 {
     public record RemoveTemperatureSensorModel
     {
-        public int Id { get; set; }
+        public string SensorId { get; set; }
     }
 }
