@@ -61,15 +61,16 @@ namespace TemperatureSensor.Infrastructure.DatabaseUtility.Service
         {
 
             var existingSensor =
-                    await _context.TemperatureSensors.AsNoTracking().FirstOrDefaultAsync(x => x.Id == updateTemperatureSensorModel.Id);
+                    await _context.TemperatureSensors.AsNoTracking().FirstOrDefaultAsync(x => x.SensorId == updateTemperatureSensorModel.SensorId);
             if (existingSensor == null)
             {
                 return false;
             }
             else
             {
-                _context.TemperatureSensors.Update(
-                    _mapper.Map<TemperatureSensorEntity>(updateTemperatureSensorModel));
+                var sensorToUpdate = _mapper.Map<TemperatureSensorEntity>(updateTemperatureSensorModel);
+                sensorToUpdate.Id = existingSensor.Id;
+                _context.TemperatureSensors.Update(sensorToUpdate);
                 await _context.SaveChangesAsync();
                 return true;
             }

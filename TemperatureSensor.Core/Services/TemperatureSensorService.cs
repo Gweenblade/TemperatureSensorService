@@ -37,6 +37,7 @@ namespace TemperatureSensor.Core.Services
 
         public async Task<bool> UpdateTemperatureSensorAsync(UpdateTemperatureSensorModel updateTemperatureSensorModel)
         {
+            updateTemperatureSensorModel.Temperature = _temperatureGeneratorService.GenerateTemperature();
             return await _temperatureSensorRepository.UpdateTemperatureSensorAsync(updateTemperatureSensorModel);
         }
     }
