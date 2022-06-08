@@ -58,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MDI3MjEsImV4cCI6MTY1NDcxNzEyMSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.VFtUDNVl5ehVjwPz4vrpu8tm68pISQLG6Rye5x-aRTk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MDMxNjAsImV4cCI6MTY1NDcxNzU2MCwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.EvoWAMdEKC4G7AXgb_QX7tWCteTGYljCg-kQMdc0nl0",
 									"type": "string"
 								}
 							]
@@ -287,7 +287,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IkZhbHNlIiwibmJmIjoxNjU0NjI5NjQwLCJleHAiOjE2NTQ2NDQwNDAsImlzcyI6IkF1dGhlbnRpY2F0aW9uQXBpIiwiYXVkIjoiVGVtcGVyYXR1cmVTZW5zb3JBcGkifQ.wfkEUXg8nnLEoKQ-xC9FM-zDEv2H3t9PXB7qtLqSY08",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MTI4MjYsImV4cCI6MTY1NDcyNzIyNiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.qI04uRenTZoAHUw-gejQ-1eS2FD7RiKi9mCfz84MyGQ",
 									"type": "string"
 								}
 							]
@@ -295,7 +295,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/BetterSbbensor?Depth=999&CircleOfLatitude=999&Meridian=999",
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/TheBestSensorEver?Depth=999&CircleOfLatitude=999&Meridian=999",
 							"protocol": "https",
 							"host": [
 								"temperaturesensorservice",
@@ -304,7 +304,7 @@
 							],
 							"path": [
 								"TemperatureSensors",
-								"BetterSbbensor"
+								"TheBestSensorEver"
 							],
 							"query": [
 								{
@@ -332,7 +332,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IkZhbHNlIiwibmJmIjoxNjU0NjI5NjQwLCJleHAiOjE2NTQ2NDQwNDAsImlzcyI6IkF1dGhlbnRpY2F0aW9uQXBpIiwiYXVkIjoiVGVtcGVyYXR1cmVTZW5zb3JBcGkifQ.wfkEUXg8nnLEoKQ-xC9FM-zDEv2H3t9PXB7qtLqSY08",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MTI4MjYsImV4cCI6MTY1NDcyNzIyNiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.qI04uRenTZoAHUw-gejQ-1eS2FD7RiKi9mCfz84MyGQ",
 									"type": "string"
 								}
 							]
@@ -362,7 +362,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MTI4MjYsImV4cCI6MTY1NDcyNzIyNiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.qI04uRenTZoAHUw-gejQ-1eS2FD7RiKi9mCfz84MyGQ",
 									"type": "string"
 								}
 							]
@@ -370,7 +370,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/Bestsensor",
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/TheBestSensorEver",
 							"protocol": "https",
 							"host": [
 								"temperaturesensorservice",
@@ -379,7 +379,7 @@
 							],
 							"path": [
 								"TemperatureSensors",
-								"Bestsensor"
+								"TheBestSensorEver"
 							]
 						}
 					},
@@ -393,7 +393,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MTI4MjYsImV4cCI6MTY1NDcyNzIyNiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.qI04uRenTZoAHUw-gejQ-1eS2FD7RiKi9mCfz84MyGQ",
 									"type": "string"
 								}
 							]
@@ -401,7 +401,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors?Id=2&SensorId=Bestsensor123&Depth=5&CircleOfLatitude=5&Meridian=5",
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors?SensorId=TheBestSensorEver&Depth=5&CircleOfLatitude=5&Meridian=5",
 							"protocol": "https",
 							"host": [
 								"temperaturesensorservice",
@@ -413,12 +413,8 @@
 							],
 							"query": [
 								{
-									"key": "Id",
-									"value": "2"
-								},
-								{
 									"key": "SensorId",
-									"value": "Bestsensor123"
+									"value": "TheBestSensorEver"
 								},
 								{
 									"key": "Depth",
@@ -438,14 +434,14 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "DeleteSensor",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MTI4MjYsImV4cCI6MTY1NDcyNzIyNiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.qI04uRenTZoAHUw-gejQ-1eS2FD7RiKi9mCfz84MyGQ",
 									"type": "string"
 								}
 							]
@@ -453,7 +449,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/2",
+							"raw": "https://temperaturesensorservice.azurewebsites.net/TemperatureSensors/TheBestSensorEver",
 							"protocol": "https",
 							"host": [
 								"temperaturesensorservice",
@@ -462,7 +458,7 @@
 							],
 							"path": [
 								"TemperatureSensors",
-								"2"
+								"TheBestSensorEver"
 							]
 						}
 					},
