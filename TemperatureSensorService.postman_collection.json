@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ddd516a9-a86d-4fb8-9849-4d134d7e8967",
-		"name": "TemperatureSensorLocal",
+		"name": "TemperatureSensorService",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -58,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjcyNDYsImV4cCI6MTY1NDY0MTY0NiwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.s9DyDP_ImRj5YuIqK742EHwzYVjvAPd-TvyDpJYqwvg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MDI3MjEsImV4cCI6MTY1NDcxNzEyMSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.VFtUDNVl5ehVjwPz4vrpu8tm68pISQLG6Rye5x-aRTk",
 									"type": "string"
 								}
 							]
@@ -102,7 +102,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MDI3MjEsImV4cCI6MTY1NDcxNzEyMSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.VFtUDNVl5ehVjwPz4vrpu8tm68pISQLG6Rye5x-aRTk",
 									"type": "string"
 								}
 							]
@@ -131,7 +131,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IjEyMyIsImlzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTY1NDYyNzA2MCwiZXhwIjoxNjU0NjQxNDYwLCJpc3MiOiJBdXRoZW50aWNhdGlvbkFwaSIsImF1ZCI6IlRlbXBlcmF0dXJlU2Vuc29yQXBpIn0.sqZR8RL0onpzjLf4f2m1CQBI1mL4PnEVk9yI2tQgc7s",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ3MDI3MjEsImV4cCI6MTY1NDcxNzEyMSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.VFtUDNVl5ehVjwPz4vrpu8tm68pISQLG6Rye5x-aRTk",
 									"type": "string"
 								}
 							]
@@ -139,7 +139,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7195/TemperatureSensors/Bestsensor",
+							"raw": "https://localhost:7195/TemperatureSensors/BestSensor",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -147,7 +147,7 @@
 							"port": "7195",
 							"path": [
 								"TemperatureSensors",
-								"Bestsensor"
+								"BestSensor"
 							]
 						}
 					},
@@ -161,7 +161,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2OTk3NzQsImV4cCI6MTY1NDcxNDE3NCwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.UpNL9ejvcXX4f1F6erBshmhZixXCPvxlclmf9Uc7I4Y",
 									"type": "string"
 								}
 							]
@@ -169,7 +169,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7195/TemperatureSensors?Id=7&SensorId=Bestsensor123&Depth=5&CircleOfLatitude=5&Meridian=5",
+							"raw": "https://localhost:7195/TemperatureSensors?SensorId=BestSensor&Depth=15&CircleOfLatitude=0&Meridian=0",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -180,24 +180,20 @@
 							],
 							"query": [
 								{
-									"key": "Id",
-									"value": "7"
-								},
-								{
 									"key": "SensorId",
-									"value": "Bestsensor123"
+									"value": "BestSensor"
 								},
 								{
 									"key": "Depth",
-									"value": "5"
+									"value": "15"
 								},
 								{
 									"key": "CircleOfLatitude",
-									"value": "5"
+									"value": "0"
 								},
 								{
 									"key": "Meridian",
-									"value": "5"
+									"value": "0"
 								}
 							]
 						}
@@ -205,14 +201,14 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "DeleteSensor",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2MjgyNzEsImV4cCI6MTY1NDY0MjY3MSwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.v4gD7XNeUzi0i_kZuKRijzmOLHJ-MNq2VRFqcV-lVJU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJpZCI6IkFkbWluIiwiaXNBZG1pbiI6IlRydWUiLCJuYmYiOjE2NTQ2OTk3NzQsImV4cCI6MTY1NDcxNDE3NCwiaXNzIjoiQXV0aGVudGljYXRpb25BcGkiLCJhdWQiOiJUZW1wZXJhdHVyZVNlbnNvckFwaSJ9.UpNL9ejvcXX4f1F6erBshmhZixXCPvxlclmf9Uc7I4Y",
 									"type": "string"
 								}
 							]
@@ -220,7 +216,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7195/TemperatureSensors/7",
+							"raw": "https://localhost:7195/TemperatureSensors/Bestsensor",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -228,7 +224,7 @@
 							"port": "7195",
 							"path": [
 								"TemperatureSensors",
-								"7"
+								"Bestsensor"
 							]
 						}
 					},

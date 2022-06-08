@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TemperatureSensor.Core.Infrastructure;
 using TemperatureSensor.Core.InternalModels;
 using TemperatureSensor.Models.Requests;
+using TemperatureSensor.Models.Responses;
 
 namespace TemperatureSensor.Infrastructure.WebApi
 {
@@ -109,7 +110,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
                     _mapper.Map<GetTemperatureSensorModel>(getTemperatureSensorRequest));
                 if (sensor != null)
                 {
-                    return Ok(sensor);
+                    return Ok(_mapper.Map<GetTemperatureSensorResponse>(sensor));
                 }
                 else
                 {
@@ -130,7 +131,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             {
                 var sensors = await _temperatureSensorService.GetTemperatureSensorsAsync(
                     _mapper.Map<GetTemperatureSensorsModel>(getTemperatureSensorsRequest));
-                return Ok(sensors);
+                return Ok(_mapper.Map<IEnumerable<GetTemperatureSensorResponse>>(sensors));
             }
             catch (Exception ex)
             {

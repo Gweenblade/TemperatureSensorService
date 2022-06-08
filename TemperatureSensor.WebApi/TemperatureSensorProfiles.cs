@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TemperatureSensor.Core.Dtos;
 using TemperatureSensor.Core.InternalModels;
 using TemperatureSensor.Models.Requests;
 using TemperatureSensor.Models.Responses;
@@ -15,7 +16,7 @@ namespace TemperatureSensor.Infrastructure.WebApi
             CreateMap<UpdateTemperatureSensorRequest, UpdateTemperatureSensorModel>();
             CreateMap<GetTemperatureSensorsRequest, GetTemperatureSensorsModel>();
 
-            CreateMap<GetTemperatureSensorModel, GetTemperatureSensorResponse>();
+            CreateMap<TemperatureSensorDto, GetTemperatureSensorResponse>();
         }
     }
 }
