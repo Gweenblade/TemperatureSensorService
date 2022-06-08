@@ -2,6 +2,6 @@
 {
     public record GetTemperatureSensorModel
     {
-        public string SensorId { get; set; }
+        public string SensorId { get; set; } = string.Empty;
     }
 }

@@ -5,7 +5,7 @@ namespace TemperatureSensor.Models.Requests
     public record CreateTemperatureSensorRequest
     {
         [FromRoute]
-        public string SensorId { get; set; }
+        public string SensorId { get; set; } = string.Empty;
 
         [FromQuery]
         public int Depth { get; set; }

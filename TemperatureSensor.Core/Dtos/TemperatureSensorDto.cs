@@ -3,7 +3,7 @@
     public class TemperatureSensorDto
     {
         public int Id { get; set; }
-        public string SensorId { get; set; }
+        public string SensorId { get; set; } = string.Empty;
 
         public int Depth { get; set; }
 
